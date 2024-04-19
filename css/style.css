@@ -74,13 +74,14 @@ header {
     padding-bottom: 30px;
 }
 
-@media (max-width: 650px) {
-    .navi {
-        flex-direction: column;
-        height: 110px;
-        padding-bottom: 5px;
-    }
+#hamburger-logo {
+    padding-left: 20px;
+    padding-right: 20px;
+}
 
+/* ========== menu burger ==========*/
+@media (max-width: 700px) {
+    #restenavbar {}
 }
 
 /* ========== bandeau ==========*/
