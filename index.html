@@ -17,9 +17,7 @@
         <div id="home"></div>
         <div class="navi">
             <div id="navdebut">
-                <label id="hamburger-logo" for="hamburger">☰</label>
-                <section id="restenavbar">
-                    REVOLVER
+                REVOLVER
             </div>
             <div>
                 <ul id="navmilieu">
@@ -33,15 +31,15 @@
             <div>
                 <ul id="navfin">
                     <li class="navbar"><a class="navlien" href="/menu.html" target=”_blank”><i
-                                class="fa-brands fa-twitter"></i></a></li>
-                    <li class="navbar"><a class="navlien" href="/menu.html" target=”_blank”><i
-                                class="fa-brands fa-facebook-f"></i></a></li>
-                    <li class="navbar"><a class="navlien" href="/menu.html" target=”_blank”><i
+                        class="fa-brands fa-twitter"></i></a></li>
+                        <li class="navbar"><a class="navlien" href="/menu.html" target=”_blank”><i
+                            class="fa-brands fa-facebook-f"></i></a></li>
+                            <li class="navbar"><a class="navlien" href="/menu.html" target=”_blank”><i
                                 class="fa-brands fa-instagram"></i></a></li>
                 </ul>
             </div>
-            </section>
         </div>
+        <label ><img src="/img/menu_burger.png" alt="" class="menu_burger"></label>
         <figure class="header-content">
             <img src="/img/h5-slider-graphic.png" alt="">
         </figure>
@@ -53,8 +51,8 @@
     </p>
     <!-- ============================ Section 1 ============================ -->
     <div id="tradition"></div>
-    <section class="bloc">
-        <div class="bloc1">
+    <section class="blocTradition">
+        <div class="ligneBeerTradition">
             <article class="blochaut">
                 <h2>BEER TRADITION</h2>
                 <h4>Tons of shortcodes provide countless options</h4>
@@ -70,7 +68,7 @@
                 <img src="/img/h5-holder-image-1.png" alt="Dessin d'un tonneau">
             </figure>
         </div>
-        <div class="bloc2">
+        <div class="lignePubStory">
             <article class="blocbas">
                 <h2>PUB STORY</h2>
                 <h4>Tons of shortcodes provide countless options</h4>
@@ -159,9 +157,9 @@
     </div>
     <div class="maps">
         <iframe id="carteMaps"
-            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d7467.560698234853!2d7.752607740117485!3d48.56807428840705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sfr!4v1713520874222!5m2!1sfr!2sfr"
-            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d7467.560698234853!2d7.752607740117485!3d48.56807428840705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sfr!4v1713520874222!5m2!1sfr!2sfr"
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
         <div class="gradient-overlay"></div>
         <img src="/img/h1-pin.png" alt="Logo 'vous êtes ici'">
     </div>
@@ -170,7 +168,16 @@
     <footer>
         <img src="/img/footer-logo.png" alt="Logo Revolver">
     </footer>
-
+    
+    <!-- ========= script burger ========= -->        
+    <script>
+        const menuHamburger = document.querySelector(".menu_burger")
+        const navLinks = document.querySelector(".navi")
+        
+        menuHamburger.addEventListener('click',()=>{
+            navLinks.classList.toggle('mobile-menu')
+        })
+    </script>
 </body>
 
 </html>
