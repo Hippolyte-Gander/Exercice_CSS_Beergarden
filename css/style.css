@@ -31,6 +31,10 @@ header {
     z-index: 10;
 }
 
+#hamburger-logo {
+    display: none;
+}
+
 .navi ul {
     display: flex;
     gap: 10px;
@@ -73,28 +77,54 @@ header {
     width: 30%;
     padding-bottom: 30px;
 }
-
-#hamburger-logo {
-    padding-left: 20px;
-    padding-right: 20px;
+ .menu_burger{
+    display: none;
 }
 
 /* ========== menu burger ==========*/
-@media (max-width: 700px) {
-    #restenavbar {}
+@media screen and  (max-width: 750px) {
+    .navi {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        height: 100%;
+        padding: 40px 0;
+        margin-left: -100%;
+        transition: 0.2s;
+    }
+    .navi ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 50px 0;
+    }
+    .menu_burger {
+        display: block;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: 50px;
+        border-radius: 15%;
+        z-index: 11;
+        background-color: #C59D5F;
+    }
+    .menu_burger:hover {
+        cursor: pointer;
+    }
+    .mobile-menu{
+        margin-left: 0;
+    }
 }
-
 /* ========== bandeau ==========*/
 #bandeau {
     background: #C59D5F;
     color: white;
     padding: 30px;
     text-align: center;
-    font-size: 35px;
+    font-size:calc(20px + 1.2vw);
     font-weight: 600;
 }
 
-@media (max-width: 650px) {
+@media screen and  (max-width: 750px) {
     #bandeau {
         font-size: 15px;
         padding: 10px;
@@ -103,19 +133,19 @@ header {
 
 /* ========== section 1 ==========*/
 
-.bloc {
+.blocTradition {
     display: flex;
     position: relative;
     z-index: 5;
     flex-wrap: wrap;
 }
 
-.bloc1 {
+.ligneBeerTradition {
     display: flex;
     flex: cover;
 }
 
-.bloc2 {
+.lignePubStory {
     display: flex;
     min-width: 100%;
     flex-direction: row-reverse;
@@ -129,22 +159,22 @@ header {
     align-items: center;
 }
 
-.bloc p {
+.blocTradition p {
     padding: 15px 75px;
     font-family: Raleway;
     color: rgb(105, 105, 105);
-    font-size: 15px;
+    font-size:calc(12px + 0.7vw);
     text-align: center;
 }
 
 h2 {
-    font-size: 40px;
+    font-size:calc(20px + 0.7vw);
     font-weight: 425;
 }
 
 h4 {
     font-family: 'Times New Roman', Times, serif;
-    font-size: 15px;
+    font-size:calc(12px + 0.7vw);
     font-weight: 300;
     font-style: italic;
 }
@@ -170,14 +200,6 @@ h4 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.blocbas p {
-    padding: 15px 75px;
-    font-family: Raleway;
-    color: rgb(105, 105, 105);
-    font-size: 15px;
-    text-align: center;
 }
 
 .blocimg2 {
@@ -207,6 +229,7 @@ h4 {
 
 .button:hover {
     background: #e6b975;
+    cursor: pointer;
 }
 
 .readmore {
@@ -217,9 +240,26 @@ h4 {
     color: white;
 }
 
-@media (max-width: 650px) {
-    .blochaut {
-        font-size: 0.5em;
+/* ==========  screen < 750px ==========*/
+@media screen and  (max-width: 750px) {
+    .ligneBeerTradition , .lignePubStory {
+        flex-direction: column;
+    }
+    .blochaut, .blocimg1, .blocbas, .blocimg2{
+        width: 100%;
+        height: 100vw; 
+        max-width:  100%;
+    }
+
+
+    .blochaut h2, .blocbas h2 {
+        font-size: 25px;
+    }
+    .blochaut h4, .blocbas h4 {
+        font-size: 20px;
+    }
+    .blochaut p, .blocbas p{
+        font-size: 15px;
     }
 }
 
@@ -253,6 +293,10 @@ h4 {
     transition: 0.5s;
 }
 
+.img_content:hover {
+    cursor: pointer;
+}
+
 /* ========== logo croix ==========*/
 .croix i {
     position: absolute;
@@ -279,15 +323,35 @@ h4 {
     transition: 1s;
 }
 
-@media(max-width: 650px) {
+@media screen and (max-width: 900px) {
+    .galerie {
+        display: flex;
+        font-size: 200%;
+    }
+    .croix i {
+        height: 50vw;
+    }
+    .galerie .img_content {
+        flex-wrap: wrap;
+        min-width: 50%;
+        max-width: 50%;
+    }
+}
+@media screen and (max-width: 650px) {
     .galerie {
         flex-direction: column;
+        font-size: 200%;
     }
-
+    .croix i {
+        height: 100vw;
+    }
     .galerie img {
         min-width: 100%;
     }
-
+    .galerie .img_content {
+        flex-wrap: nowrap;
+        min-width: 100%;
+    }
 }
 
 /* ========== bandeau logos ==========*/
@@ -308,6 +372,7 @@ h4 {
 .caselogos:hover {
     color: #C59D5F;
     transition: 0.5s;
+    cursor: pointer;
 }
 
 .caselogos:hover img {
@@ -316,16 +381,28 @@ h4 {
 }
 
 .case h5 {
-    font-size: 20px;
+    font-size:calc(15px + 0.7vw);
     padding-top: 20px;
 }
 
 .case p {
-    font-size: 20px;
+    font-size:calc(15px + 0.7vw);
     color: grey;
     font-weight: 200;
 }
 
+@media screen and (max-width: 1000px) {
+    .bandeaulogos {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .case {
+        max-width: 50%;
+        min-width: 50%;
+        justify-content: center;
+        padding: 20px 0;
+    }
+}
 /* ========== beandeau bas ==========*/
 
 .bandeaubas {
@@ -360,6 +437,7 @@ h4 {
     z-index: 5;
     display: flex;
     position: relative;
+    overflow: hidden;
 }
 
 .gradient-overlay {
@@ -385,6 +463,7 @@ h4 {
     width: 100%;
     height: 40vw;
     filter: invert(1) grayscale(1);
+    transform: scale(1.5);
 }
 
 /* ========== footer ==========*/
@@ -397,7 +476,7 @@ footer {
 }
 
 footer img {
-    max-width: 5%;
+    max-width: 100px;
     max-height: auto;
     object-fit: contain;
 }
